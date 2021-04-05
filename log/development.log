@@ -3,3 +3,120 @@
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8446352959021318215)[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-04-05 04:38:44 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 742)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/paomarin/Escritorio/baby-shower-mariana/public/packs
+[Webpacker] Hash: 157ae3ded8838277dce5
+Version: webpack 4.46.0
+Time: 2320ms
+Built at: 05/04/2021 04:38:50
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-4071647ce8346f432d6d.js    125 KiB  application  [emitted] [immutable]  application
+js/application-4071647ce8346f432d6d.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-4071647ce8346f432d6d.js js/application-4071647ce8346f432d6d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 619 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 5386.4ms | Allocations: 64842)
+Completed 200 OK in 5457ms (Views: 5400.5ms | ActiveRecord: 0.0ms | Allocations: 70120)
+
+
+Started GET "/images/baner.jpeg" for ::1 at 2021-04-05 04:38:50 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/baner.jpeg"):
+  
+Started GET "/images/mariana.jpeg" for ::1 at 2021-04-05 04:38:50 -0600
+Started GET "/images/mensaje.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+Started GET "/images/fotos.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+Started GET "/images/principal.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/mensaje.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/mariana.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/principal.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/fotos.jpeg"):
+  
+Started GET "/images/07.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/07.jpeg"):
+  
+Started GET "/images/02.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/02.jpeg"):
+  
+Started GET "/images/08.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/08.jpeg"):
+  
+Started GET "/images/11.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+Started GET "/images/10.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/10.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/11.jpeg"):
+  
+Started GET "/images/12.jpeg" for ::1 at 2021-04-05 04:38:51 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/12.jpeg"):
+  
+Started GET "/images/13.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+Started GET "/images/04.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+Started GET "/images/17.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/13.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/04.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/17.jpeg"):
+  
+Started GET "/images/20.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/20.jpeg"):
+  
+Started GET "/images/18.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/18.jpeg"):
+  
+Started GET "/images/invitacion.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+Started GET "/images/detalle.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/invitacion.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/detalle.jpeg"):
+  
+Started GET "/images/confirmacion.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/confirmacion.jpeg"):
+  
+Started GET "/images/21.jpeg" for ::1 at 2021-04-05 04:38:52 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/images/21.jpeg"):
+  
+Started GET "/" for ::1 at 2021-04-05 04:39:27 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 6384)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 6854)
+
+
