@@ -1,0 +1,94 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+  @import "bootstrap";
+
+.navbar {
+    background-color: #EFC4FB;
+    height: 70px;
+    border-color: #FFF9B0;
+    border-width: medium;
+}
+
+.color-me{
+    color: white;
+    font-size: medium;
+}
+
+a:hover {
+    background-color: #B8E7EF;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
+}
+
+
+html, body, .container-fluid {
+    height: 96.88%;
+    background-color: #B8E7EF;
+    padding-top: 40px;
+}
+
+.dropdown-menu{
+  position:relative;
+  }
+
+.class {
+    cursor: url('/images/cloud.jpg'), auto;
+}
+
+div.c {
+    position: absolute;
+    left: 80px;
+    width: 800px;
+    height: 400px;
+    bottom: -120px;
+}
+
+.p {
+    font-size: 40px;
+    color: white;
+  }
+
+h1{
+    color: #EFC4FB;
+    font-weight: 100;
+    font-size: 40px;
+    margin: 40px 0px 20px;
+}
+
+#clockdiv{
+      font-family: sans-serif;
+      color: #fff;
+      display: inline-block;
+      font-weight: 100;
+      text-align: center;
+      font-size: 30px;
+ }
+#clockdiv > div{
+      padding: 10px;
+      border-radius: 3px;
+      background: #EFC4FB;
+      display: inline-block;
+}
+#clockdiv div > span{
+      padding: 15px;
+      border-radius: 3px;
+      background: #FF83A8;
+      display: inline-block;
+}
+.smalltext{
+      padding-top: 5px;
+      font-size: 20px;
+}

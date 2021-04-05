@@ -1,0 +1,86 @@
+<div class="modal" id="guest-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Confirmar espacios</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_with model: @guest do |form| %>
+          <div>
+            <p class="mt-1 text-sm text-gray-500">
+              Por protocolos del Ministerio de Salud, para el debido ingreso al Salón, solicitamos la siguiente información.
+            </p>
+          </div>
+          <p class="mt-1 text-sm text-gray-500">
+            Ingrese su número cédula y el correo eléctronico para confirmar su asistencia.
+          </p>
+          <div class="sm:col-span-3">
+            <label for="first_name" class="block text-sm font-medium text-gray-700">
+              Nombre
+            </label>
+            <div class="mt-1">
+              <%= guest.fullname %>
+            </div>
+          </div>
+          <div class="sm:col-span-3">
+            <label for="id_guest" class="block text-sm font-medium text-gray-700">
+              Cédula
+            </label>
+            <div class="mt-1">
+              <%= form.text_field :guest_id, placeholder: "cedula" %>
+            </div>
+          </div>
+          <div class="sm:col-span-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">
+              Correo eléctronico
+            </label>
+            <div class="mt-1">
+              <%= form.text_field :email, placeholder: "email", required: true %>
+            </div>
+          </div>
+          <% if @scort_guests.present? %>
+            <div class="pt-8">
+              <div>
+                <h3 class="text-lg leading-6 font-medium text-gray-900">
+                  Acompañantes
+                </h3>
+                <p class="mt-1 text-sm text-gray-500">
+                  Además ingrese los números de cédula de sus acompañantes para confirmar su asistencia.
+                </p>
+                <% @scort_guests.each do |scort| %>
+                  <%= form.fields_for "scort_guests[]", scort do |f| %>
+                    <%= f.hidden_field :scort_id, value: scort.id %>
+                    <div class="sm:col-span-3">
+                      <label for="fullname" class="block text-sm font-medium text-gray-700">
+                        Nombre
+                      </label>
+                      <div class="mt-1">
+                        <%= scort.fullname %>
+                      </div>
+                    </div>
+                    <div class="sm:col-span-3">
+                      <label for="scort_id" class="block text-sm font-medium text-gray-700">
+                        Cédula
+                      </label>
+                      <div class="mt-1">
+                        <%= f.text_field :id_scort, placeholder: "Cédula" %>
+                      </div>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+              <p class="mt-1 text-sm text-gray-500">
+                En caso de que alguno de sus acompañantes no fuera asistir, porfavor deje el campo de la cédula en blanco.
+              </p>
+            </div>
+          <% end %>
+          <br>
+          <%= form.submit 'Confirmar', class: 'btn btn-success'%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

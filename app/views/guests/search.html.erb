@@ -1,0 +1,51 @@
+  <div class="bg-white shadow overflow-hidden sm:rounded-lg d-flex justify-content-center">
+ <section class="py-20 px-20">
+              <% if @guest.blank? %>
+              No se encontraron resultados
+              <% else %>
+                  <% @guest.each do |t| %>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Cantidad de campos</th>
+                          <th scope="col">Confirmación</th>
+                          <th colspan="2"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% guest_id = t.id %>
+                        <tr>
+                          <td><%= t.fullname %></td>
+                          <td class="d-flex justify-content-center"><%= t.quantitypeople.round %></td>
+                         <% if t.confirmation === 2 %>
+                          <td class="flex justify-center">Confirmado no asistir</td>
+                        <%  elsif t.confirmation === 1 %>
+                         <td class="flex justify-center"> Confirmado</td>
+                         <% else %>
+                         <td class="flex justify-center">Pendiente</td>
+                        <% end %>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <% if t.confirmation === 2 || t.confirmation === 1  %>
+                      <section class="py-20 px-20">
+                      <div class="d-flex justify-content-center">
+                        <%= link_to 'Atrás', root_path, class: 'btn btn-info' %>
+                      </div>
+                    </section>
+                     <% else %>
+                      <section class="py-20 px-20">
+                      <p class="d-flex justify-content-center py-8 px-14"> Desea asistir </p>
+                      <div class="d-flex justify-content-center">
+                        <%= link_to 'Sí', edit_guest_path(guest_id), class: 'btn btn-success', remote: true %>
+                        <div id='guest-content'></div>
+                        <%= link_to 'No', guest_cancel_invitation_path(guest_id), class: 'btn btn-danger',confirm: "¿Esta seguro?"%>
+                      </div>
+                    </section>
+                  <% end %>
+
+                <% end %>
+              <% end %>
+               </section>
+</div>
