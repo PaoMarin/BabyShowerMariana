@@ -57,6 +57,10 @@ div.c {
     display: inline-block;
 }
 
+div.container {
+    background-color: #B8E7EF;
+}
+
 .p {
     color: white;
 
