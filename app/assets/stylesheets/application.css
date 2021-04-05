@@ -16,9 +16,16 @@
 .navbar {
     background-color: #EFC4FB;
     height: 70px;
-    border-color: #FFF9B0;
-    border-width: medium;
+    font-weight: 700;
+    color: #fff;
+    border: 2px solid #FFF9B0;
+
 }
+
+.navbar-nav{
+    background-color: #EFC4FB;
+}
+
 
 .color-me{
     color: white;
@@ -31,11 +38,11 @@ a:hover {
     border-top-right-radius: 6px !important;
     border-bottom-left-radius: 6px !important;
     border-bottom-right-radius: 6px !important;
+    color: white;
 }
 
 
 html, body, .container-fluid {
-    height: 96.88%;
     background-color: #B8E7EF;
     padding-top: 40px;
 }
@@ -44,51 +51,42 @@ html, body, .container-fluid {
   position:relative;
   }
 
-.class {
-    cursor: url('/images/cloud.jpg'), auto;
-}
-
 div.c {
-    position: absolute;
-    left: 80px;
-    width: 800px;
-    height: 400px;
-    bottom: -120px;
+    bottom: 70px;
+    max-width: 100%;
+    display: inline-block;
 }
 
 .p {
-    font-size: 40px;
     color: white;
+
   }
 
 h1{
     color: #EFC4FB;
-    font-weight: 100;
-    font-size: 40px;
     margin: 40px 0px 20px;
 }
 
 #clockdiv{
+    max-width: 100%;
       font-family: sans-serif;
       color: #fff;
-      display: inline-block;
-      font-weight: 100;
       text-align: center;
-      font-size: 30px;
  }
 #clockdiv > div{
-      padding: 10px;
+    max-width: 100%;
+      padding: 6px;
       border-radius: 3px;
       background: #EFC4FB;
       display: inline-block;
 }
 #clockdiv div > span{
-      padding: 15px;
+    max-width: 100%;
+      padding: 8px;
       border-radius: 3px;
       background: #FF83A8;
       display: inline-block;
 }
 .smalltext{
       padding-top: 5px;
-      font-size: 20px;
 }
