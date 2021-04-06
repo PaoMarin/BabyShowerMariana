@@ -8220,3 +8220,1916 @@ Processing by GuestsController#index as HTML
 Completed 200 OK in 49ms (Views: 31.9ms | Allocations: 9241)
 
 
+Started GET "/" for ::1 at 2021-04-05 20:07:31 -0600
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 14.9ms | Allocations: 656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 510.3ms | Allocations: 16672)
+Completed 200 OK in 671ms (Views: 567.8ms | ActiveRecord: 0.0ms | Allocations: 20853)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:07:40 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3523)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 3923)
+
+
+Started GET "/guests?search=Yamileth&commit=Buscar" for ::1 at 2021-04-05 20:07:46 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Yamileth", "commit"=>"Buscar"}
+  [1m[36mGuest Load (195.8ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Yamileth%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 1.3ms | Allocations: 578)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 3949)
+Completed 200 OK in 250ms (Views: 24.1ms | ActiveRecord: 205.0ms | Allocations: 9634)
+
+
+Started GET "/guests/4/edit" for ::1 at 2021-04-05 20:07:50 -0600
+Processing by GuestsController#edit as JS
+  Parameters: {"id"=>"4"}
+  [1m[36mGuest Load (1.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mCACHE Guest Load (0.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:15:in `edit'
+  Rendering guests/edit.js.erb
+  [1m[36mScortGuest Load (1.5ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."guest_id" = $1[0m  [["guest_id", 4]]
+  ↳ app/views/guests/_edit.html.erb:44
+  Rendered guests/_edit.html.erb (Duration: 88.0ms | Allocations: 4993)
+  Rendered guests/edit.js.erb (Duration: 118.7ms | Allocations: 5685)
+Completed 200 OK in 177ms (Views: 114.9ms | ActiveRecord: 10.6ms | Allocations: 9975)
+
+
+Started PATCH "/guests/4" for ::1 at 2021-04-05 20:08:08 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"3423434", "email"=>"mjmarin378@gmail.com", "scort_guests"=>{"9"=>{"scort_id"=>"9", "id_scort"=>"656546"}, "10"=>{"scort_id"=>"10", "id_scort"=>"565656"}, "11"=>{"scort_id"=>"11", "id_scort"=>"65465656"}}}, "commit"=>"Confirmar", "id"=>"4"}
+  [1m[36mGuest Load (2.7ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mGuest Update (43.1ms)[0m  [1m[33mUPDATE "guests" SET "id_guest" = $1, "email" = $2, "updated_at" = $3, "confirmation" = $4 WHERE "guests"."id" = $5[0m  [["id_guest", "3423434"], ["email", "mjmarin378@gmail.com"], ["updated_at", "2021-04-06 02:08:08.466961"], ["confirmation", 1], ["id", 4]]
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mTRANSACTION (46.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mScortGuest Load (0.8ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (1.3ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (2.2ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "656546"], ["updated_at", "2021-04-06 02:08:08.588729"], ["confirmation", 1], ["id", 9]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (30.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Load (1.5ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (1.2ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.9ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "565656"], ["updated_at", "2021-04-06 02:08:08.638203"], ["confirmation", 1], ["id", 10]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (26.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Load (1.2ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (2.7ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.2ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "65465656"], ["updated_at", "2021-04-06 02:08:08.684397"], ["confirmation", 1], ["id", 11]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+GuestMailer#send_confirmation: processed outbound mail in 5.4ms
+Completed 500 Internal Server Error in 324ms (ActiveRecord: 172.1ms | Allocations: 29188)
+
+
+  
+NameError (undefined local variable or method `recipient' for #<GuestMailer:0x0000000000a4b0>):
+  
+app/mailers/guest_mailer.rb:6:in `send_confirmation'
+app/controllers/guests_controller.rb:51:in `block in update'
+app/controllers/guests_controller.rb:34:in `update'
+Started PATCH "/guests/4" for ::1 at 2021-04-05 20:08:30 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"3423434", "email"=>"mjmarin378@gmail.com", "scort_guests"=>{"9"=>{"scort_id"=>"9", "id_scort"=>"656546"}, "10"=>{"scort_id"=>"10", "id_scort"=>"565656"}, "11"=>{"scort_id"=>"11", "id_scort"=>"65465656"}}}, "commit"=>"Confirmar", "id"=>"4"}
+  [1m[36mGuest Load (1.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mScortGuest Load (0.9ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (1.6ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Load (1.0ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mCACHE Guest Load (0.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Load (1.4ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mCACHE Guest Load (0.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 2.3ms | Allocations: 442)
+  Rendered layout layouts/mailer.html.erb (Duration: 38.4ms | Allocations: 612)
+GuestMailer#send_confirmation: processed outbound mail in 205.3ms
+Delivered mail 606bc29f3e036_3cf4e484358d@debian.mail (33.3ms)
+Date: Mon, 05 Apr 2021 20:08:31 -0600
+From: joskamarin@gmail.com
+To: mjmarin378@gmail.com
+Cc: paomg.9614@gmail.com
+Bcc: =?UTF-8?Q?paomg.9614@gmail.com.com,_Confirmaci=C3=B3n_de_asistencia?=
+ =?UTF-8?Q?_Baby_Shower_Mariana?=
+Message-ID: <606bc29f3e036_3cf4e484358d@debian.mail>
+Subject: Send confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+<div class=3D"image">=0D
+  <img src=3D"/images/banner.jpeg" />=0D
+</div>=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Yamil=
+eth Gonzalez Esquivel</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">34234=
+34</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">4.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+         <h1>Acompa=C3=B1antes:</h1>=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Edwin=
+ Illescas Villalba</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">65654=
+6</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Edwin=
+ Illescas Gonz=C3=A1lez</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">56565=
+6</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Kathe=
+rine Illescas Gonz=C3=A1lez</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">65465=
+656</td>=0D
+              </tr>=0D
+            </table>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 314ms (ActiveRecord: 20.7ms | Allocations: 26681)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:08:31 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 3664)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 4227)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:11:55 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 147)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3493)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 4827)
+
+
+Started GET "/guests?search=hector&commit=Buscar" for ::1 at 2021-04-05 20:12:01 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"hector", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%hector%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3517)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 1.1ms | Allocations: 4703)
+
+
+Started GET "/guests?search=juan&commit=Buscar" for ::1 at 2021-04-05 20:12:06 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"juan", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%juan%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 3524)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 1.0ms | Allocations: 4663)
+
+
+Started GET "/guests?search=juan+Carlos&commit=Buscar" for ::1 at 2021-04-05 20:12:12 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"juan Carlos", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.7ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%juan Carlos%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3523)
+Completed 200 OK in 12ms (Views: 6.8ms | ActiveRecord: 1.7ms | Allocations: 4662)
+
+
+Started GET "/guests?search=juan+Carlos+Gonzalez&commit=Buscar" for ::1 at 2021-04-05 20:12:22 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"juan Carlos Gonzalez", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.4ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%juan Carlos Gonzalez%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3518)
+Completed 200 OK in 18ms (Views: 12.5ms | ActiveRecord: 1.4ms | Allocations: 4655)
+
+
+Started GET "/guests?search=juan+Carlos+Gonzalez&commit=Buscar" for ::1 at 2021-04-05 20:12:26 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"juan Carlos Gonzalez", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.9ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%juan Carlos Gonzalez%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 142)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3524)
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 1.9ms | Allocations: 4682)
+
+
+Started GET "/guests?search=maria&commit=Buscar" for ::1 at 2021-04-05 20:12:33 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"maria", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.7ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%maria%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 3523)
+Completed 200 OK in 21ms (Views: 12.0ms | ActiveRecord: 1.7ms | Allocations: 4682)
+
+
+Started GET "/guests?search=maria&commit=Buscar" for ::1 at 2021-04-05 20:12:39 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"maria", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.9ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%maria%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3522)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 1.9ms | Allocations: 4661)
+
+
+Started GET "/guests?search=maria&commit=Buscar" for ::1 at 2021-04-05 20:13:16 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"maria", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.7ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%maria%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 4170)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 1.7ms | Allocations: 5312)
+
+
+Started GET "/guests?search=maria&commit=Buscar" for ::1 at 2021-04-05 20:13:21 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"maria", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.4ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%maria%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3522)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 1.4ms | Allocations: 4661)
+
+
+Started GET "/guests?search=maria&commit=Buscar" for ::1 at 2021-04-05 20:13:23 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"maria", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%maria%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3522)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 1.5ms | Allocations: 4661)
+
+
+Started GET "/guests?search=Yamileth&commit=Buscar" for ::1 at 2021-04-05 20:13:35 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Yamileth", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Yamileth%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 0.7ms | Allocations: 86)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3452)
+Completed 200 OK in 42ms (Views: 10.5ms | ActiveRecord: 9.3ms | Allocations: 8381)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:13:37 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 3522)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3918)
+
+
+Started GET "/guests?search=Martha&commit=Buscar" for ::1 at 2021-04-05 20:13:45 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Martha", "commit"=>"Buscar"}
+  [1m[36mGuest Load (2.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Martha%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 0.6ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3487)
+Completed 200 OK in 16ms (Views: 8.5ms | ActiveRecord: 2.0ms | Allocations: 4620)
+
+
+Started GET "/guests/1/edit" for ::1 at 2021-04-05 20:13:48 -0600
+Processing by GuestsController#edit as JS
+  Parameters: {"id"=>"1"}
+  [1m[36mGuest Load (1.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mCACHE Guest Load (0.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:15:in `edit'
+  Rendering guests/edit.js.erb
+  [1m[36mScortGuest Load (1.8ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."guest_id" = $1[0m  [["guest_id", 1]]
+  ↳ app/views/guests/_edit.html.erb:44
+  Rendered guests/_edit.html.erb (Duration: 18.1ms | Allocations: 4417)
+  Rendered guests/edit.js.erb (Duration: 19.0ms | Allocations: 4943)
+Completed 200 OK in 42ms (Views: 15.7ms | ActiveRecord: 8.8ms | Allocations: 9122)
+
+
+Started PATCH "/guests/1" for ::1 at 2021-04-05 20:14:23 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"234567", "email"=>"pamarin@est.utn.ac.cr", "scort_guests"=>{"1"=>{"scort_id"=>"1", "id_scort"=>"6756"}, "2"=>{"scort_id"=>"2", "id_scort"=>"566767"}, "3"=>{"scort_id"=>"3", "id_scort"=>"6765"}, "4"=>{"scort_id"=>"4", "id_scort"=>"67656"}}}, "commit"=>"Confirmar", "id"=>"1"}
+  [1m[36mGuest Load (3.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mGuest Update (2.2ms)[0m  [1m[33mUPDATE "guests" SET "id_guest" = $1, "email" = $2, "updated_at" = $3, "confirmation" = $4 WHERE "guests"."id" = $5[0m  [["id_guest", "234567"], ["email", "pamarin@est.utn.ac.cr"], ["updated_at", "2021-04-06 02:14:23.029619"], ["confirmation", 1], ["id", 1]]
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mTRANSACTION (37.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mScortGuest Load (1.4ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (2.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (66.6ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "6756"], ["updated_at", "2021-04-06 02:14:23.097388"], ["confirmation", 1], ["id", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (63.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Load (1.5ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (1.2ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.5ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "566767"], ["updated_at", "2021-04-06 02:14:23.243474"], ["confirmation", 1], ["id", 2]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Load (1.0ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (1.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.6ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "6765"], ["updated_at", "2021-04-06 02:14:23.273803"], ["confirmation", 1], ["id", 3]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Load (1.4ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (1.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.2ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "67656"], ["updated_at", "2021-04-06 02:14:23.299132"], ["confirmation", 1], ["id", 4]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 0.7ms | Allocations: 78)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 150)
+GuestMailer#send_confirmation: processed outbound mail in 4.6ms
+Delivered mail 606bc3ff4f909_3cf4d30436ad@debian.mail (4.7ms)
+Date: Mon, 05 Apr 2021 20:14:23 -0600
+From: joskamarin@gmail.com
+To: pamarin@est.utn.ac.cr
+Cc: paomg.9614@gmail.com
+Bcc: =?UTF-8?Q?paomg.9614@gmail.com,_Confirmaci=C3=B3n_de_asistencia_Baby?=
+ =?UTF-8?Q?_Shower_Mariana?=
+Message-ID: <606bc3ff4f909_3cf4d30436ad@debian.mail>
+Subject: Send confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+<div class=3D"image">=0D
+  <img src=3D"/images/banner.jpeg" />=0D
+</div>=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Marth=
+a Gonz=C3=A1lez Esquivel</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">23456=
+7</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">5.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+         <h1>Acompa=C3=B1antes:</h1>=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Paola=
+ Marin</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">6756<=
+/td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Maria=
+ Jose Marin</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">56676=
+7</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Valen=
+tina Marin</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">6765<=
+/td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Maria=
+ Esquivel</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">67656=
+</td>=0D
+              </tr>=0D
+            </table>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 310ms (ActiveRecord: 221.7ms | Allocations: 27438)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:14:23 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3524)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3927)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:19:28 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3522)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 3917)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:19:30 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 4793)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 5191)
+
+
+Started GET "/guests?search=Luis&commit=Buscar" for ::1 at 2021-04-05 20:19:36 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Luis", "commit"=>"Buscar"}
+  [1m[36mGuest Load (2.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Luis%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 0.8ms | Allocations: 185)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3551)
+Completed 200 OK in 36ms (Views: 9.2ms | ActiveRecord: 14.7ms | Allocations: 7753)
+
+
+Started GET "/guests/11/edit" for ::1 at 2021-04-05 20:19:40 -0600
+Processing by GuestsController#edit as JS
+  Parameters: {"id"=>"11"}
+  [1m[36mGuest Load (1.9ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mCACHE Guest Load (0.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:15:in `edit'
+  Rendering guests/edit.js.erb
+  [1m[36mScortGuest Load (1.3ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."guest_id" = $1[0m  [["guest_id", 11]]
+  ↳ app/views/guests/_edit.html.erb:44
+  Rendered guests/_edit.html.erb (Duration: 5.2ms | Allocations: 1165)
+  Rendered guests/edit.js.erb (Duration: 6.1ms | Allocations: 1521)
+Completed 200 OK in 19ms (Views: 5.9ms | ActiveRecord: 4.9ms | Allocations: 3253)
+
+
+Started PATCH "/guests/11" for ::1 at 2021-04-05 20:19:49 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"342342", "email"=>"mjmarin378@gmail.com", "scort_guests"=>{"22"=>{"scort_id"=>"22", "id_scort"=>"43242"}}}, "commit"=>"Confirmar", "id"=>"11"}
+  [1m[36mGuest Load (1.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mGuest Update (28.3ms)[0m  [1m[33mUPDATE "guests" SET "id_guest" = $1, "email" = $2, "updated_at" = $3, "confirmation" = $4 WHERE "guests"."id" = $5[0m  [["id_guest", "342342"], ["email", "mjmarin378@gmail.com"], ["updated_at", "2021-04-06 02:19:49.932000"], ["confirmation", 1], ["id", 11]]
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mTRANSACTION (201.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mScortGuest Load (1.4ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (2.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.1ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "43242"], ["updated_at", "2021-04-06 02:19:50.186592"], ["confirmation", 1], ["id", 22]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 1.3ms | Allocations: 65)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.6ms | Allocations: 137)
+GuestMailer#send_confirmation: processed outbound mail in 5.3ms
+Delivered mail 606bc5463ac34_3cf4d30437b0@debian.mail (5.3ms)
+Date: Mon, 05 Apr 2021 20:19:50 -0600
+From: joskamarin@gmail.com
+To: mjmarin378@gmail.com
+Cc: paomg.9614@gmail.com
+Bcc: =?UTF-8?Q?paomg.9614@gmail.com,_Confirmaci=C3=B3n_de_asistencia_Baby?=
+ =?UTF-8?Q?_Shower_Mariana?=
+Message-ID: <606bc5463ac34_3cf4d30437b0@debian.mail>
+Subject: Send confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+<div class=3D"image">=0D
+  <img src=3D"/images/banner.jpeg" />=0D
+</div>=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Luis =
+Marin Castro</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">34234=
+2</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">2.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+         <h1>Acompa=C3=B1antes:</h1>=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Eliza=
+ Sibaja</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">43242=
+</td>=0D
+              </tr>=0D
+            </table>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 318ms (ActiveRecord: 278.7ms | Allocations: 11548)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:19:50 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3524)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 3926)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:30:46 -0600
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 357.1ms | Allocations: 5802)
+Completed 200 OK in 400ms (Views: 369.2ms | ActiveRecord: 0.0ms | Allocations: 9984)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:30:49 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 3522)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 3917)
+
+
+Started GET "/guests?search=Karen&commit=Buscar" for ::1 at 2021-04-05 20:30:52 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Karen", "commit"=>"Buscar"}
+  [1m[36mGuest Load (44.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Karen%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 1.4ms | Allocations: 577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3949)
+Completed 200 OK in 262ms (Views: 10.2ms | ActiveRecord: 236.3ms | Allocations: 9634)
+
+
+Started GET "/guests/26/edit" for ::1 at 2021-04-05 20:30:56 -0600
+Processing by GuestsController#edit as JS
+  Parameters: {"id"=>"26"}
+  [1m[36mGuest Load (1.5ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mCACHE Guest Load (0.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:15:in `edit'
+  Rendering guests/edit.js.erb
+  [1m[36mScortGuest Load (2.5ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."guest_id" = $1[0m  [["guest_id", 26]]
+  ↳ app/views/guests/_edit.html.erb:44
+  Rendered guests/_edit.html.erb (Duration: 12.1ms | Allocations: 1790)
+  Rendered guests/edit.js.erb (Duration: 14.0ms | Allocations: 2289)
+Completed 200 OK in 36ms (Views: 14.3ms | ActiveRecord: 7.6ms | Allocations: 6584)
+
+
+Started PATCH "/guests/26" for ::1 at 2021-04-05 20:31:03 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"5455465", "email"=>"paomg.9614@gmail.com"}, "commit"=>"Confirmar", "id"=>"26"}
+  [1m[36mGuest Load (1.4ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mGuest Update (27.0ms)[0m  [1m[33mUPDATE "guests" SET "id_guest" = $1, "email" = $2, "updated_at" = $3, "confirmation" = $4 WHERE "guests"."id" = $5[0m  [["id_guest", "5455465"], ["email", "paomg.9614@gmail.com"], ["updated_at", "2021-04-06 02:31:03.767772"], ["confirmation", 1], ["id", 26]]
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mTRANSACTION (80.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 419)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.7ms | Allocations: 589)
+GuestMailer#send_confirmation: processed outbound mail in 9.5ms
+Delivered mail 606bc7e814614_d144e346579c@debian.mail (6027.7ms)
+Date: Mon, 05 Apr 2021 20:31:04 -0600
+From: joskamarin@gmail.com
+To: paomg.9614@gmail.com
+Cc: paomg.9614@gmail.com
+Bcc: =?UTF-8?Q?paomg.9614@gmail.com,_Confirmaci=C3=B3n_de_asistencia_Baby?=
+ =?UTF-8?Q?_Shower_Mariana?=
+Message-ID: <606bc7e814614_d144e346579c@debian.mail>
+Subject: Send confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+<div class=3D"image">=0D
+  <img src=3D"/images/banner.jpeg" />=0D
+</div>=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Karen=
+ Sanchez</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">54554=
+65</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">1.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Completed 500 Internal Server Error in 6350ms (ActiveRecord: 111.1ms | Allocations: 21541)
+
+
+  
+Net::SMTPFatalError (555 5.5.2 Syntax error. s84sm2033917vke.52 - gsmtp
+):
+  
+app/controllers/guests_controller.rb:51:in `block in update'
+app/controllers/guests_controller.rb:34:in `update'
+Started PATCH "/guests/26" for ::1 at 2021-04-05 20:32:18 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"5455465", "email"=>"paomg.9614@gmail.com"}, "commit"=>"Confirmar", "id"=>"26"}
+  [1m[36mGuest Load (1.2ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 79)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 152)
+GuestMailer#send_confirmation: processed outbound mail in 4.5ms
+Delivered mail 606bc832dbcdb_d1453e8658a6@debian.mail (14346.2ms)
+Date: Mon, 05 Apr 2021 20:32:18 -0600
+From: joskamarin@gmail.com
+To: paomg.9614@gmail.com
+Cc: paomg.9614@gmail.com
+Bcc: =?UTF-8?Q?paomg.9614@gmail.com,_Confirmaci=C3=B3n_de_asistencia_Baby?=
+ =?UTF-8?Q?_Shower_Mariana?=
+Message-ID: <606bc832dbcdb_d1453e8658a6@debian.mail>
+Subject: Send confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+<div class=3D"image">=0D
+  <img src=3D"/images/banner.jpeg" />=0D
+</div>=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Karen=
+ Sanchez</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">54554=
+65</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">1.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Completed 500 Internal Server Error in 14386ms (ActiveRecord: 9.0ms | Allocations: 13391)
+
+
+  
+Net::SMTPFatalError (555 5.5.2 Syntax error. b144sm2097575vkf.41 - gsmtp
+):
+  
+app/controllers/guests_controller.rb:51:in `block in update'
+app/controllers/guests_controller.rb:34:in `update'
+Started GET "/guests?search=Karen&commit=Buscar" for ::1 at 2021-04-05 20:33:44 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Karen", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.7ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Karen%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 0.7ms | Allocations: 94)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.7ms | Allocations: 3581)
+Completed 200 OK in 57ms (Views: 49.9ms | ActiveRecord: 1.7ms | Allocations: 4886)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:33:47 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 3536)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 3934)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:33:48 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3523)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3919)
+
+
+Started GET "/guests?search=Maria+Amalia&commit=Buscar" for ::1 at 2021-04-05 20:33:54 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Maria Amalia", "commit"=>"Buscar"}
+  [1m[36mGuest Load (1.9ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Maria Amalia%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 0.8ms | Allocations: 121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3482)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 1.9ms | Allocations: 4611)
+
+
+Started GET "/guests/15/edit" for ::1 at 2021-04-05 20:33:56 -0600
+Processing by GuestsController#edit as JS
+  Parameters: {"id"=>"15"}
+  [1m[36mGuest Load (1.8ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mCACHE Guest Load (0.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:15:in `edit'
+  Rendering guests/edit.js.erb
+  [1m[36mScortGuest Load (2.6ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."guest_id" = $1[0m  [["guest_id", 15]]
+  ↳ app/views/guests/_edit.html.erb:44
+  Rendered guests/_edit.html.erb (Duration: 46.1ms | Allocations: 4220)
+  Rendered guests/edit.js.erb (Duration: 47.7ms | Allocations: 4577)
+Completed 200 OK in 578ms (Views: 42.1ms | ActiveRecord: 12.9ms | Allocations: 8688)
+
+
+Started PATCH "/guests/15" for ::1 at 2021-04-05 20:34:07 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"234567", "email"=>"paomg.9614@gmail.com", "scort_guests"=>{"27"=>{"scort_id"=>"27", "id_scort"=>"87900"}}}, "commit"=>"Confirmar", "id"=>"15"}
+  [1m[36mGuest Load (2.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mGuest Update (108.7ms)[0m  [1m[33mUPDATE "guests" SET "id_guest" = $1, "email" = $2, "updated_at" = $3, "confirmation" = $4 WHERE "guests"."id" = $5[0m  [["id_guest", "234567"], ["email", "paomg.9614@gmail.com"], ["updated_at", "2021-04-06 02:34:07.807569"], ["confirmation", 1], ["id", 15]]
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mTRANSACTION (575.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mScortGuest Load (1.4ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (3.8ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.3ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "87900"], ["updated_at", "2021-04-06 02:34:08.662465"], ["confirmation", 1], ["id", 27]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (19.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 1.1ms | Allocations: 65)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.8ms | Allocations: 137)
+GuestMailer#send_confirmation: processed outbound mail in 5.5ms
+Delivered mail 606bc8a0ab29d_d144d306597d@debian.mail (1634.1ms)
+Date: Mon, 05 Apr 2021 20:34:08 -0600
+From: joskamarin@gmail.com
+To: paomg.9614@gmail.com
+Cc: paomg.9614@gmail.com
+Bcc: =?UTF-8?Q?paomg.9614@gmail.com,_Confirmaci=C3=B3n_de_asistencia_Baby?=
+ =?UTF-8?Q?_Shower_Mariana?=
+Message-ID: <606bc8a0ab29d_d144d306597d@debian.mail>
+Subject: Send confirmation
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+<div class=3D"image">=0D
+  <img src=3D"/images/banner.jpeg" />=0D
+</div>=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Maria=
+ Amalia Alfaro Rojas</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">23456=
+7</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">2.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+         <h1>Acompa=C3=B1antes:</h1>=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Jose =
+Alberto Chaves Quesada</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">87900=
+</td>=0D
+              </tr>=0D
+            </table>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Completed 500 Internal Server Error in 2533ms (ActiveRecord: 716.5ms | Allocations: 15001)
+
+
+  
+Net::SMTPFatalError (555 5.5.2 Syntax error. e9sm2156469vsq.32 - gsmtp
+):
+  
+app/controllers/guests_controller.rb:51:in `block in update'
+app/controllers/guests_controller.rb:34:in `update'
+Started PATCH "/guests/15" for ::1 at 2021-04-05 20:34:41 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"234567", "email"=>"paomg.9614@gmail.com", "scort_guests"=>{"27"=>{"scort_id"=>"27", "id_scort"=>"87900"}}}, "commit"=>"Confirmar", "id"=>"15"}
+  [1m[36mGuest Load (1.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mScortGuest Load (1.7ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (1.8ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 70)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.0ms | Allocations: 142)
+GuestMailer#send_confirmation: processed outbound mail in 8.6ms
+Delivered mail 606bc8c22db81_d144e346603b@debian.mail (2984.5ms)
+Date: Mon, 05 Apr 2021 20:34:42 -0600
+From: joskamarin@gmail.com
+To: paomg.9614@gmail.com
+Cc: paomg.9614@gmail.com
+Message-ID: <606bc8c22db81_d144e346603b@debian.mail>
+Subject: =?UTF-8?Q?Confirmaci=C3=B3n_de_asistencia_Baby_Shower_Mariana?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+<div class=3D"image">=0D
+  <img src=3D"/images/banner.jpeg" />=0D
+</div>=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Maria=
+ Amalia Alfaro Rojas</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">23456=
+7</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">2.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+         <h1>Acompa=C3=B1antes:</h1>=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Jose =
+Alberto Chaves Quesada</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">87900=
+</td>=0D
+              </tr>=0D
+            </table>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 3100ms (ActiveRecord: 22.2ms | Allocations: 21280)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:34:45 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 3534)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 4048)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:37:06 -0600
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 5802)
+Completed 200 OK in 46ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 9984)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:37:21 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 3524)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 3924)
+
+
+Started GET "/guests?search=Jose&commit=Buscar" for ::1 at 2021-04-05 20:37:26 -0600
+Processing by GuestsController#index as HTML
+  Parameters: {"search"=>"Jose", "commit"=>"Buscar"}
+  [1m[36mGuest Load (3.4ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE (unaccent(fullname) LIKE unaccent('%Jose%'))[0m
+  ↳ app/controllers/guests_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering guests/search.html.erb within layouts/application
+  Rendered guests/search.html.erb within layouts/application (Duration: 3.0ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4087)
+Completed 200 OK in 41ms (Views: 11.6ms | ActiveRecord: 12.4ms | Allocations: 9793)
+
+
+Started GET "/guests/6/edit" for ::1 at 2021-04-05 20:37:28 -0600
+Processing by GuestsController#edit as JS
+  Parameters: {"id"=>"6"}
+  [1m[36mGuest Load (1.1ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mCACHE Guest Load (0.0ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:15:in `edit'
+  Rendering guests/edit.js.erb
+  [1m[36mScortGuest Load (2.6ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."guest_id" = $1[0m  [["guest_id", 6]]
+  ↳ app/views/guests/_edit.html.erb:44
+  Rendered guests/_edit.html.erb (Duration: 18.4ms | Allocations: 4750)
+  Rendered guests/edit.js.erb (Duration: 20.8ms | Allocations: 5330)
+Completed 200 OK in 107ms (Views: 17.8ms | ActiveRecord: 10.6ms | Allocations: 11226)
+
+
+Started PATCH "/guests/6" for ::1 at 2021-04-05 20:37:38 -0600
+Processing by GuestsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "guest"=>{"guest_id"=>"565", "email"=>"mjmarin378@gmail.com", "scort_guests"=>{"16"=>{"scort_id"=>"16", "id_scort"=>"64553"}}}, "commit"=>"Confirmar", "id"=>"6"}
+  [1m[36mGuest Load (1.2ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:89:in `set_guest'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mGuest Update (55.2ms)[0m  [1m[33mUPDATE "guests" SET "id_guest" = $1, "email" = $2, "updated_at" = $3, "confirmation" = $4 WHERE "guests"."id" = $5[0m  [["id_guest", "565"], ["email", "mjmarin378@gmail.com"], ["updated_at", "2021-04-06 02:37:38.958598"], ["confirmation", 1], ["id", 6]]
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mTRANSACTION (99.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:35:in `block in update'
+  [1m[36mScortGuest Load (1.1ms)[0m  [1m[34mSELECT "scort_guests".* FROM "scort_guests" WHERE "scort_guests"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:41:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mGuest Load (2.2ms)[0m  [1m[34mSELECT "guests".* FROM "guests" WHERE "guests"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mScortGuest Update (1.4ms)[0m  [1m[33mUPDATE "scort_guests" SET "id_scort" = $1, "updated_at" = $2, "confirmation" = $3 WHERE "scort_guests"."id" = $4[0m  [["id_scort", "64553"], ["updated_at", "2021-04-06 02:37:39.145722"], ["confirmation", 1], ["id", 16]]
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  [1m[36mTRANSACTION (35.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/guests_controller.rb:42:in `block (2 levels) in update'
+  Rendering layout layouts/mailer.html.erb
+  Rendering guest_mailer/send_confirmation.html.erb within layouts/mailer
+  Rendered guest_mailer/send_confirmation.html.erb within layouts/mailer (Duration: 1.3ms | Allocations: 379)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.5ms | Allocations: 550)
+GuestMailer#send_confirmation: processed outbound mail in 9.4ms
+Delivered mail 606bc97342ae3_eea4f9c379c9@debian.mail (9952.3ms)
+Date: Mon, 05 Apr 2021 20:37:39 -0600
+From: joskamarin@gmail.com
+To: mjmarin378@gmail.com
+Cc: paomg.9614@gmail.com
+Message-ID: <606bc97342ae3_eea4f9c379c9@debian.mail>
+Subject: =?UTF-8?Q?Confirmaci=C3=B3n_de_asistencia_Baby_Shower_Mariana?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      /* Email styles need to be inline */=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <!-- pre-header -->=0D
+<table style=3D"display:none!important;">=0D
+  <tr>=0D
+    <td>=0D
+      <div style=3D"overflow:hidden;display:none;font-size:1px;color:#fff=
+fff;line-height:1px;font-family: 'Gotham-Book';maxheight:0px;max-width:0p=
+x;opacity:0;">=0D
+        Baby Shower Mariana=0D
+      </div>=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+        <img class=3D"w-50" src=3D"/images/banner.jpeg" alt=3D"">=0D
+<!-- pre-header end AGREGAR LA FECHA-->=0D
+<h1>=C2=A1Gracias por confirmar su asistencia!</h1>=0D
+=0D
+<p> Has confirmado la invitaci=C3=B3n para el Baby Shower de Mariana Chav=
+es Mar=C3=ADn.</p>=0D
+<p> El d=C3=ADa  24 de Abril del 2021</p>=0D
+<p> A las 03:00 p.m.</p>=0D
+=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td align=3D"center">=0D
+    <!--[if (gte mso 9)|(IE)]>=0D
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D=
+"0" width=3D"600">=0D
+    <tr>=0D
+    <td align=3D"center" valign=3D"top" width=3D"600">=0D
+    <![endif]-->=0D
+    <table border=3D"0" align=3D"center" width=3D"590" cellpadding=3D"0" =
+cellspacing=3D"0" class=3D"container590">=0D
+        <tr>=0D
+          <td align=3D"left" bgcolor=3D"#ffffff" style=3D"padding: 24px; =
+font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Jose =
+Angel Marin Castro</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">565</=
+td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Canti=
+dad de espacios:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">2.0</=
+td>=0D
+              </tr>=0D
+            </table>=0D
+          </td>=0D
+        </tr>=0D
+         <h1>Acompa=C3=B1antes:</h1>=0D
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%">=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Nombr=
+e:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">Danie=
+la Mar=C3=ADn Soto</td>=0D
+              </tr>=0D
+              <tr>=0D
+                <td align=3D"left" width=3D"75%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">C=C3=A9=
+dula:</td>=0D
+                <td align=3D"left" width=3D"25%" style=3D"padding: 6px 12=
+px;font-family: 'Gotham-Book'; font-size: 16px; line-height: 24px;">64553=
+</td>=0D
+              </tr>=0D
+            </table>=0D
+      </table>=0D
+      <!--[if (gte mso 9)|(IE)]>=0D
+      </td>=0D
+      </tr>=0D
+      </table>=0D
+      <![endif]-->=0D
+    </td>=0D
+  </tr>=0D
+</table>=0D
+=0D
+<table border=3D"0" width=3D"580" cellpadding=3D"0" cellspacing=3D"0" bgc=
+olor=3D"ffffff" class=3D"bg_color" style=3D"margin: 0 auto;max-width: 580=
+px !important;">=0D
+  <tr>=0D
+    <td height=3D"40" style=3D"font-size: 40px; line-height: 40px;">&nbsp=
+;</td>=0D
+  </tr>=0D
+</table>=0D
+  </body>=0D
+</html>=0D
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 10282ms (ActiveRecord: 198.8ms | Allocations: 24373)
+
+
+Started GET "/" for ::1 at 2021-04-05 20:37:49 -0600
+Processing by GuestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering guests/index.html.erb within layouts/application
+  Rendered guests/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3533)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 3935)
+
+

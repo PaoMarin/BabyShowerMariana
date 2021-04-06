@@ -48,7 +48,7 @@ class GuestsController < ApplicationController
               end
             end
              #Enviar correo
-             GuestMailer.send_confirmation(guest: @guest, scort: @scorts_objs).deliver_later
+             GuestMailer.send_confirmation(guest: @guest, scort: @scorts_objs).deliver
             format.html {redirect_to root_path, notice: 'Confirmado exitosamente.'}
             format.json {render :edit, status: :ok, location: @guest}
           else
