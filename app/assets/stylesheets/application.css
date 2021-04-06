@@ -22,7 +22,7 @@
 
 }
 
-.navbar-custom {
+.divm-custom {
     background-color: #EFC4FB;
     text-align: end;
     color: white;
@@ -84,6 +84,7 @@ h1{
       font-family: sans-serif;
       color: #fff;
       text-align: center;
+      justify-content: center;
  }
 #clockdiv > div{
     max-width: 100%;
