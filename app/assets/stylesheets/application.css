@@ -30,6 +30,12 @@
 .color-me{
     color: white;
     font-size: medium;
+    background-color: #EFC4FB;
+    text-align: center;
+    border-top-left-radius: 6px !important;
+    border-top-right-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-bottom-right-radius: 6px !important;
 }
 
 a:hover {
