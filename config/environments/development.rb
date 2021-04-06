@@ -87,8 +87,8 @@ config.action_mailer.smtp_settings = {
     domain: "mail.google.com",####important
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: 'credit.challenge.app@gmail.com',
-    password: 'xcw0nhvw'
+    user_name: ENV["USERNAME"],
+    password: ENV["PASSWORD"]
 }
 
 end
